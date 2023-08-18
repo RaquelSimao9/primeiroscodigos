@@ -1,0 +1,19 @@
+function calcularMMC(a, b) {
+  // Calcula o máximo divisor comum (MDC) usando o algoritmo de Euclides
+  function calcularMDC(x, y) {
+    if (y === 0) {
+      return x;
+    } else {
+      return calcularMDC(y, x % y);
+    }
+  }
+
+  // Calcula o MMC usando a fórmula: MMC(a, b) = (a * b) / MDC(a, b)
+  return (a * b) / calcularMDC(a, b);
+}
+
+// Exemplo de uso:
+var numero1 = 12;
+var numero2 = 18;
+var mmc = calcularMMC(numero1, numero2);
+console.log("O mínimo múltiplo comum entre", numero1, "e", numero2, "é", mmc);

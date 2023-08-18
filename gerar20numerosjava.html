@@ -1,0 +1,12 @@
+<script>
+function gerarFibonacci(termo1, termo2, quantidade) {
+  var fibonacci = [termo1, termo2]; 
+
+  for (var i = 2; i < quantidade; i++) {
+    var proximoTermo = fibonacci[i - 1] + fibonacci[i - 2];
+    fibonacci.push(proximoTermo); 
+  }
+
+  return fibonacci;
+}
+
